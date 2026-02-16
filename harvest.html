@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Обрахунок Врожайності зернових</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <img src="./wheat.jpg" class="mainimage">
+    <main>
+        <div class="maintext">
+            <h1>Обрахунок Врожайності зернових</h1>
+            <p>Якщо вам необхідно обчислити врожайність ваших зернових культур з точністю до грама - ви зайшли на правильний сайт! Введіть ваші дані у відповідні поля та натисніть на кнопку "Обчислити". Тоді ви отримаєте кількість центнерів врожайності, які зберете з гектара</p>
+        </div>
+        <div class="in">
+            <div><input type="text" placeholder="Кількість колосків на метр" class="wid">  
+            <p>Введіть сюди кількість колосків на один метр довжини</p></div>
+            <div><input type="text" placeholder="Коефіцієнт густини посіву" class="density"> 
+            <p>Введіть сюди ширину міжряддя у сантиметрах</p></div>
+            <div><input type="text" placeholder="Озерненість колоса" class="grain">
+            <p>Введіть сюди середню кількість насінин на колоску </p></div> 
+            <div><input type="text" placeholder="Вага тисячі насінин" class="weight">
+            <p>Введіть сюди вагу 1000 насінин вашої культури</p></div> 
+        </div>
+        <div class="equal">
+            <input type="button" value="Обчислити" onclick="counttr()">
+        </div>
+        <div class="erroring">
+            <p class="deferr"></p>
+        </div>
+        <div class="out">
+            <div>
+                <input type="text" class="working">
+                <p>ц/га - Врожайність зернової культури</p>
+            </div>
+        </div>
+    </main>
+    
+    <script src="./script2.js"></script>
+</body>
+</html>

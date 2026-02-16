@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Обрахунок вартості продажу</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <img src="./wheat.jpg" class="mainimage">
+    <main>
+        <div class="maintext">
+            <h1>Обрахунок прибутку продажу зернових</h1>
+            <p>Якщо вам необхідно обчислити суму, яку можна отримати з продажу ваших зернових культур з точністю до гривні - ви зайшли на правильний сайт! Введіть ваші дані у відповідні поля та натисніть на кнопку "Обчислити". Тоді ви отримаєте суму, яку зможете заробити</p>
+        </div>
+        <div class="in">
+            <div><input type="text" placeholder="Маса врожаю" class="wid">  
+            <p>Введіть сюди масу вашої культури в центнерах</p></div>
+            <div><input type="text" placeholder="Відсоток якості" class="density"> 
+            <p>Введіть сюди відсоток насінин вищого гатунку</p></div>
+            <div><input type="text" placeholder="Вологість врожаю у відсотках" class="grain">
+            <p>Введіть сюди відсоток вологості врожаю (5-20%)</p></div> 
+            <div><input type="text" placeholder="Ціна" class="weight">
+            <p>Введіть сюди ціну в гривнях за центнер агрокультури</p></div> 
+        </div>
+        <div class="equal">
+            <input type="button" value="Обчислити" onclick="counttr()">
+        </div>
+        <div class="erroring">
+            <p class="deferr"></p>
+        </div>
+        <div class="out">
+            <div>
+                <input type="text" class="working">
+                <p>грн - приблизна cума, отримана з продажу вашого врожаю</p>
+            </div>
+        </div>
+    </main>
+    
+    <script src="./script3.js"></script>
+</body>
+</html>

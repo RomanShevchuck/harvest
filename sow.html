@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Обрахунок норми висіву зернових</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <img src="./wheat.jpg" class="mainimage">
+    <main>
+        <div class="maintext">
+            <h1>Обрахунок норми висіву зернових</h1>
+            <p>Якщо вам необхідно обчислити норму висіву ваших зернових культур з точністю до грама - ви зайшли на правильний сайт! Введіть ваші дані у відповідні поля та натисніть на кнопку "Обчислити". Тоді ви отримаєте масу насіння, яку необхідно посіяти</p>
+        </div>
+        <div class="in">
+            <div><input type="text" placeholder="Товщина посіву" class="wid">  
+            <p>Введіть сюди кількість насінин на один метр довжини</p></div>
+            <div><input type="text" placeholder="Ширина міжряддя" class="density"> 
+            <p>Введіть сюди ширину міжряддя у сантиметрах</p></div>
+            <div><input type="text" placeholder="Схожість рослин" class="grain">
+            <p>Введіть сюди відсоток схожості рослин</p></div> 
+            <div><input type="text" placeholder="Вага тисячі насінин" class="weight">
+            <p>Введіть сюди вагу 1000 насінин вашої культури</p></div> 
+        </div>
+        <div class="equal">
+            <input type="button" value="Обчислити" onclick="counttr()">
+        </div>
+        <div class="erroring">
+            <p class="deferr"></p>
+        </div>
+        <div class="out">
+            <div>
+                <input type="text" class="working">
+                <p>кг/га - Норма висіву зернової культури</p>
+            </div>
+        </div>
+    </main>
+    
+    <script src="./script1.js"></script>
+</body>
+</html>
