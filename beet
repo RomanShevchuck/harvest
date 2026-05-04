@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Обрахунок Врожайності буряків</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <img src="./beet.png" class="mainimage">
+    <main>
+        <div class="maintext">
+            <h1>Обрахунок Врожайності буряків</h1>
+            <p>Якщо вам необхідно обчислити врожайність ваших буряків - ви зайшли на правильний сайт! Введіть ваші дані у відповідні поля та натисніть на кнопку "Обчислити". Тоді ви отримаєте кількість центнерів врожайності, які зберете з гектара</p>
+        </div>
+        <div class="in">
+            <div><input type="text" placeholder="Кількість буряків на метр" class="wid">  
+            <p>Введіть сюди кількість буряків на один метр довжини поля </p></div>
+            <div><input type="text" placeholder="Коефіцієнт густини посіву" class="density"> 
+            <p>Введіть сюди ширину міжряддя у сантиметрах</p></div>
+            <div><input type="text" placeholder="Кількість гички" class="grain">
+            <p>Введіть сюди кількість стебел гички на першому буряку </p></div> 
+                        <div><input type="text" placeholder=" Кількість гички" class="grain">
+            <p>Введіть сюди кількість стебел гички на другому буряку </p></div> 
+                        <div><input type="text" placeholder="Кількість гички" class="grain">
+            <p>Введіть сюди кількість стебел гички на третьому буряку </p></div> 
+             <div><p>Виберіть тип грунтів</p>  
+            <select city = "Soil" id = "SoilType">
+                <option value = "low">Низький рівень</option>
+                <option value = "middle">Середній рівень</option>
+                <option value = "high">Високий рівень якості</option>
+            </select></div>
+        </div>
+        <div class="equal">
+            <input type="button" value="Обчислити" onclick="counttr6()">
+        </div>
+        <div class="erroring">
+            <p class="deferr"></p>
+        </div>
+        <div class="out">
+            <div>
+                <input type="text" class="working">
+                <p>ц/га - Врожайність буряків</p>
+            </div>
+        </div>
+    </main>
+    
+    <script src="./mainscript.js"></script>
+</body>
+</html>
