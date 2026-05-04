@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Обрахунок Врожайності кукурудзи</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <img src="./corn.jpg" class="mainimage">
+    <main>
+        <div class="maintext">
+            <h1>Обрахунок Врожайності Кукурудзи</h1>
+            <p>Якщо вам необхідно обчислити врожайність вашого посіву кукурудзи з точністю до грама - ви зайшли на правильний сайт! Введіть ваші дані у відповідні поля та натисніть на кнопку "Обчислити". Тоді ви отримаєте кількість центнерів врожайності, які зберете з гектара</p>
+        </div>
+        <div class="in">
+            <div><input type="text" placeholder="Кількість стебел на метр" class="wid">  
+            <p>Введіть сюди кількість стебел на один метр довжини</p></div>
+            <div><input type="text" placeholder="Коефіцієнт густини посіву" class="density"> 
+            <p>Введіть сюди ширину міжряддя у сантиметрах</p></div>
+            <div><input type="text" placeholder="Кількість качанів" class="grain">
+            <p>Введіть сюди середню кількість качанів на стеблі </p></div> 
+            <div><input type="text" placeholder="Маса качана" class="weight">
+            <p>Введіть сюди масу одного качана</p></div> 
+        </div>
+        <div class="equal">
+            <input type="button" value="Обчислити" onclick="counttr3()">
+        </div>
+        <div class="erroring">
+            <p class="deferr"></p>
+        </div>
+        <div class="out">
+            <div>
+                <input type="text" class="working">
+                <p>ц/га - Врожайність кукурудзи</p>
+            </div>
+        </div>
+    </main>
+    
+    <script src="./mainscript.js"></script>
+</body>
+</html>
