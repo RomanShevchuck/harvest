@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Обрахунок Врожайності буряків</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <img src="./beet.png" class="mainimage">
+
+    <main class="opti">
+
+        <div class="maintext">
+            <h1>Оптимізація посівів</h1>
+
+            <p>
+                Якщо вам необхідно оптимізувати посіви на вашій площі - 
+                то ви перейшли на потрібний сайт! Виберіть дані про ваше поле 
+                та отримаєте, яку культуру варто сіяти на цьому полі
+            </p>
+        </div>
+
+        <div class="in">
+
+            <div>
+                <input type="text" placeholder="Вологість грунту" class="wid">
+
+                <p>Відсоток вологоємності</p>
+            </div>
+
+            <div>
+
+                <p>Виберіть тип грунтів</p>
+
+                <select id="SoilType">
+
+                    <option value="chrn">Чорнозем</option>
+
+                    <option value="grey">Сірі лісові</option>
+
+                    <option value="dern">Дерново-підзолисті</option>
+
+                    <option value="chest">Каштанові</option>
+
+                    <option value="brown">Бурі</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <div class="in">
+
+            <div>
+
+                <p>Виберіть попередню культуру</p>
+
+                <select id="PreviousCrop">
+
+                    <option value="wint_wheat">Озима пшениця</option>
+
+                    <option value="turnip">Озимий ріпак</option>
+
+                    <option value="beet">Цукровий буряк</option>
+
+                    <option value="corn">Кукурудза</option>
+
+                    <option value="potato">Картопля</option>
+
+                    <option value="sunflower">Соняшник</option>
+
+                    <option value="sum_wheat">Яра пшениця</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <div class="in">
+
+            <div>
+
+                <p>Виберіть удобрення площі</p>
+
+                <select id="Fertilizer">
+
+                    <option value="azot">Азот</option>
+
+                    <option value="selitr">Селітра</option>
+
+                    <option value="K_Salt">Калієва сіль</option>
+
+                    <option value="plac">Курячий послід</option>
+
+                    <option value="ash">Попіл</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <div class="equal">
+            <input type="button" value="Оптимізувати" onclick="counttr7()">
+        </div>
+
+        <div class="erroring">
+            <p class="deferr"></p>
+        </div>
+
+        <div class="out">
+
+            <div>
+                <input type="text" class="working">
+
+                <p>НАЙКРАЩА культура для посіву</p>
+            </div>
+
+            <div>
+                <input type="text" class="working">
+
+                <p>НАЙГІРША культура для посіву</p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="./mainscript.js"></script>
+
+</body>
+</html>
