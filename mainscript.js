@@ -163,6 +163,272 @@ function counttr6() {
     document.querySelector(".working").value = result.toFixed(2);
 }
 
+function counttr7() {
+
+    // Отримання даних
+
+    let moisture = parseInt(document.querySelector(".wid").value);
+
+    let soil = document.getElementById("SoilType").value;
+
+    let previousCrop = document.getElementById("PreviousCrop").value;
+
+    let fertilizer = document.getElementById("Fertilizer").value;
+
+    let resultFields = document.querySelectorAll(".working");
+
+    let errorField = document.querySelector(".deferr");
+
+    errorField.innerHTML = "";
+
+    // Перевірка вологості
+
+    if (isNaN(moisture) || moisture < 0 || moisture > 100) {
+
+        errorField.innerHTML = "Введіть коректну вологість грунту від 0 до 100%";
+
+        return;
+    }
+
+    // Культури
+
+    let scores = {
+
+        "Озима пшениця": 0,
+
+        "Кукурудза": 0,
+
+        "Соняшник": 0,
+
+        "Цукровий буряк": 0,
+
+        "Картопля": 0,
+
+        "Соя": 0,
+
+        "Ячмінь": 0
+    };
+
+    // ------------------------------------------------
+    // ВПЛИВ ТИПУ ГРУНТУ
+    // ------------------------------------------------
+
+    if (soil == "chrn") {
+
+        scores["Озима пшениця"] += 5;
+
+        scores["Кукурудза"] += 5;
+
+        scores["Цукровий буряк"] += 4;
+
+        scores["Соняшник"] += 4;
+    }
+
+    if (soil == "grey") {
+
+        scores["Картопля"] += 5;
+
+        scores["Ячмінь"] += 4;
+
+        scores["Озима пшениця"] += 3;
+    }
+
+    if (soil == "dern") {
+
+        scores["Картопля"] += 5;
+
+        scores["Соя"] += 3;
+
+        scores["Соняшник"] -= 2;
+    }
+
+    if (soil == "chest") {
+
+        scores["Соняшник"] += 5;
+
+        scores["Кукурудза"] += 3;
+    }
+
+    if (soil == "brown") {
+
+        scores["Ячмінь"] += 4;
+
+        scores["Соя"] += 4;
+    }
+
+    // ------------------------------------------------
+    // ВПЛИВ ВОЛОГОСТІ
+    // ------------------------------------------------
+
+    if (moisture < 30) {
+
+        scores["Соняшник"] += 5;
+
+        scores["Ячмінь"] += 3;
+
+        scores["Картопля"] -= 5;
+
+        scores["Цукровий буряк"] -= 4;
+    }
+
+    if (moisture >= 30 && moisture <= 60) {
+
+        scores["Озима пшениця"] += 4;
+
+        scores["Кукурудза"] += 4;
+
+        scores["Соя"] += 3;
+    }
+
+    if (moisture > 60) {
+
+        scores["Картопля"] += 5;
+
+        scores["Цукровий буряк"] += 5;
+
+        scores["Соняшник"] -= 3;
+    }
+
+    // ------------------------------------------------
+    // ВПЛИВ ПОПЕРЕДНЬОЇ КУЛЬТУРИ
+    // ------------------------------------------------
+
+    // Повторний посів тієї самої культури небажаний
+
+    if (previousCrop == "wint_wheat") {
+
+        scores["Озима пшениця"] -= 10;
+
+        scores["Соя"] += 3;
+
+        scores["Кукурудза"] += 2;
+    }
+
+    if (previousCrop == "turnip") {
+
+        scores["Озима пшениця"] += 5;
+
+        scores["Ячмінь"] += 3;
+    }
+
+    if (previousCrop == "beet") {
+
+        scores["Цукровий буряк"] -= 10;
+
+        scores["Кукурудза"] += 4;
+
+        scores["Соя"] += 3;
+    }
+
+    if (previousCrop == "corn") {
+
+        scores["Кукурудза"] -= 10;
+
+        scores["Соя"] += 4;
+
+        scores["Ячмінь"] += 3;
+    }
+
+    if (previousCrop == "potato") {
+
+        scores["Картопля"] -= 10;
+
+        scores["Озима пшениця"] += 4;
+    }
+
+    if (previousCrop == "sunflower") {
+
+        scores["Соняшник"] -= 10;
+
+        scores["Цукровий буряк"] -= 5;
+
+        scores["Ячмінь"] += 4;
+    }
+
+    if (previousCrop == "sum_wheat") {
+
+        scores["Озима пшениця"] += 3;
+
+        scores["Ячмінь"] += 3;
+    }
+
+    // ------------------------------------------------
+    // ВПЛИВ ДОБРИВ
+    // ------------------------------------------------
+
+    if (fertilizer == "azot") {
+
+        scores["Кукурудза"] += 5;
+
+        scores["Озима пшениця"] += 4;
+    }
+
+    if (fertilizer == "selitr") {
+
+        scores["Ячмінь"] += 4;
+
+        scores["Озима пшениця"] += 3;
+    }
+
+    if (fertilizer == "K_Salt") {
+
+        scores["Цукровий буряк"] += 5;
+
+        scores["Картопля"] += 5;
+    }
+
+    if (fertilizer == "plac") {
+
+        scores["Кукурудза"] += 5;
+
+        scores["Соя"] += 4;
+    }
+
+    if (fertilizer == "ash") {
+
+        scores["Картопля"] += 4;
+
+        scores["Ячмінь"] += 3;
+    }
+
+    // ------------------------------------------------
+    // ПОШУК НАЙКРАЩОЇ ТА НАЙГІРШОЇ КУЛЬТУРИ
+    // ------------------------------------------------
+
+    let bestCulture = "";
+
+    let worstCulture = "";
+
+    let maxScore = -999;
+
+    let minScore = 999;
+
+    for (let culture in scores) {
+
+        if (scores[culture] > maxScore) {
+
+            maxScore = scores[culture];
+
+            bestCulture = culture;
+        }
+
+        if (scores[culture] < minScore) {
+
+            minScore = scores[culture];
+
+            worstCulture = culture;
+        }
+    }
+
+    // ------------------------------------------------
+    // ВИВЕДЕННЯ РЕЗУЛЬТАТУ
+    // ------------------------------------------------
+
+    resultFields[0].value = bestCulture;
+
+    resultFields[1].value = worstCulture;
+}
+
 
 
 
