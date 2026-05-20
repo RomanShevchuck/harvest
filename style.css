@@ -221,3 +221,48 @@ select{
         font-size: 20px;
     }
 }
+
+.opti .in > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;   /* ключове — вирівнює по центру */
+    gap: 30px;             /* відстань між текстом і select */
+}
+
+/* Забираємо margin — він ламає ритм */
+.opti .in p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+    width: 220px; /* ФІКСОВАНА ширина тексту = однаковий старт select */
+}
+
+/* Select стає стабільним */
+.opti .in select {
+    width: 30vw;
+    max-width: 400px;
+}
+
+/* Поля */
+.opti input,
+.opti select {
+    padding: 10px;
+    border: 1px solid #cfd8cf;
+    border-radius: 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.opti .in div p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.opti .out div:nth-child(1) {
+    color: green;
+}
+
+.opti .out div:nth-child(2) {
+    color: red;
+}
