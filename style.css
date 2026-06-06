@@ -170,7 +170,7 @@ select{
 
 
 /* ===== <= 480px (телефони) ===== */
-@media (max-width: 480px){
+@media (max-width: 360px){
     body{
         padding-top: 10px;
     }
